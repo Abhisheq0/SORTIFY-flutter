@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:sortify/main.dart';
 import 'package:sortify/model/user_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:sortify/screens/graphScreens/summary_screen.dart';
+import 'package:sortify/screens/graphScreens/top_artists_byregion_screen.dart';
 import 'package:sortify/screens/graphScreens/top_artists_screen.dart';
+import 'package:sortify/screens/graphScreens/top_global_songs_screen.dart';
 import 'package:sortify/screens/graphScreens/top_songs_screen.dart';
 import 'login_screen.dart';
 
@@ -138,14 +141,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) =>
-                        const TopSongsScreen(),
+                         TopArtistsbyRegionScreen(),
                       ),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         child: Center(
-                          child: Text('Top Songs',
+                          child: Text('Top Artists By Region(Australia)',
                             style: TextStyle(fontSize: ksecondaryFontSize,color: kprimarygreen),),
                         ),
                         decoration:
@@ -163,11 +166,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
                   GestureDetector(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            TopGlobalSongsScreen(),
+                      ),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         child: Center(
-                        child: Text('Top Songs by Region',
+                        child: Text('Top Songs (Global)',
                           style: TextStyle(fontSize: ksecondaryFontSize,color: kprimarygreen),),
                       ),
                         decoration:
@@ -183,61 +192,36 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
 
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      child: Center(
-                        child: Text('Graph 2',
-                        style: TextStyle(fontSize: ksecondaryFontSize,color: kprimarygreen),),
-                      ),
-                      decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.topRight,
-                          colors: [Colors.grey, Colors.black],
-                        ),
-                      ),),
-                  ),
-
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      child: Center(
-                        child: Text('Graph 3',
-                        style: TextStyle(fontSize: ksecondaryFontSize,color: kprimarygreen),),
-                      ),
-                      decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.topRight,
-                          colors: [Colors.grey, Colors.black],
-                        ),
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            SummaryScreen(),
                       ),
                     ),
-                  ),
-
-
-                  GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         child: Center(
-                          child: Text('Graph 4',
-                            style: TextStyle(fontSize: ksecondaryFontSize,color: kprimarygreen),),
-                        ),decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.topRight,
-                          colors: [Colors.grey, Colors.black],
+                          child: Text('Summary',
+                          style: TextStyle(fontSize: ksecondaryFontSize,color: kprimarygreen),),
                         ),
-                      ),
-                      ),
+                        decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            colors: [Colors.grey, Colors.black],
+                          ),
+                        ),),
                     ),
                   ),
+
+
+
+
+
+                  
                 ],
                 gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 20,),
 

@@ -31,7 +31,7 @@ class _TopArtistsScreenState extends State<TopArtistsScreen> {
                   itemCount: topartiststreams.length,
                   itemBuilder: (context, index) {
                     return ListTile(
-                       title: Text((index+1).toString()+") "+topartistnames[index]),
+                      title: Text((index+1).toString()+") "+topartistnames[index]),
                       subtitle:Text(topartistyear[index].toString()),
                       trailing:  Text(topartiststreams[index].toString() + " min"),
 

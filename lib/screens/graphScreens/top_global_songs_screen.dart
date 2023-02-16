@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:sortify/main.dart';
+import 'package:sortify/screens/graphScreens/top_artists_byregion_list.dart';
 import 'package:sortify/screens/graphScreens/top_artists_set.dart';
+import 'package:sortify/screens/graphScreens/top_songs_global_list.dart';
 
 var ex=[100, 200, 300];
-class TopArtistsScreen extends StatefulWidget {
-  const TopArtistsScreen({Key? key}) : super(key: key);
+class TopGlobalSongsScreen extends StatefulWidget {
+  const TopGlobalSongsScreen({Key? key}) : super(key: key);
 
   @override
-  State<TopArtistsScreen> createState() => _TopArtistsScreenState();
+  State<TopGlobalSongsScreen> createState() => _TopGlobalSongsScreenState();
 }
 
-class _TopArtistsScreenState extends State<TopArtistsScreen> {
+class _TopGlobalSongsScreenState extends State<TopGlobalSongsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Top Artists', style: TextStyle(color: kprimarygreen),),
+        title: Text('Top Songs(Global)', style: TextStyle(color: kprimarygreen),),
         centerTitle: true,
       ),
 
@@ -31,9 +33,9 @@ class _TopArtistsScreenState extends State<TopArtistsScreen> {
                   itemCount: topartiststreams.length,
                   itemBuilder: (context, index) {
                     return ListTile(
-                       title: Text((index+1).toString()+") "+topartistnames[index]),
-                      subtitle:Text(topartistyear[index].toString()),
-                      trailing:  Text(topartiststreams[index].toString() + " min"),
+                      title: Text((index+1).toString()+") "+topglobalsongnames[index]),
+
+                      trailing:  Text(topglobalsongstreams[index] + " min"),
 
 
 
